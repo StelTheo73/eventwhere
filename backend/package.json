@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-frontend": "cd ../frontend && npm start",
+    "start-backend": "nodemon index.js",
+    "start-local": "concurrently -n \"REACT,EXPRESS\" -c \"yellow,blue\" -p \"[{name}]\" \"npm run start-frontend\" \"npm run start-backend\"",
+    "build-frontend": "cd ../frontend/ && npm run build && cd ../backend/",
+    "start-production": "npm run build-frontend && node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  }
+}
