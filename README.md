@@ -9,10 +9,14 @@
 ## Local Deployment
 Start react development server and api-server in development mode:<br>
 
-1. Start react server and api-server in the same terminal:<br>
+1. In "./backend" run `npm install express`.
+
+2. In "./frontend" run `npm install`.
+
+3. Start react server and api-server in the same terminal:<br>
 &nbsp;&nbsp;```./start-local.sh```
 
-2. Start react server and api-server in different terminals:<br>
+4. Start react server and api-server in different terminals:<br>
 &nbsp;&nbsp;Terminal 1 (react server): ```cd backend/ && npm run start-frontend```<br>
 &nbsp;&nbsp;Terminal 2 (api-server): ```cd backend/ && npm run start-backend```<br>
 
