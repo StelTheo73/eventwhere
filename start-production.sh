@@ -1,1 +1,3 @@
-export PRODUCTION="TRUE" && cd ./backend && npm run start-production
+export PRODUCTION="TRUE"
+cd ./backend
+npm run start-production

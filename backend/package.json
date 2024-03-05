@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified' && exit 1",
-    "start-local": "node server.js",
-    "start-production": "node server.js"
+    // TODO: Stel, make it run for win and push in this branch
+    "start-frontend": "cd ../frontend && npm start",
+    "start-local": "node server-dev.js",
+    "start-production": "node server-prod.js"
   },
   "keywords": [],
   "author": "",

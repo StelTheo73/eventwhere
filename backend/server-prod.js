@@ -1,13 +1,12 @@
-const { log } = require('console');
 const express = require('express');
 const path = require('path');
 const { exec } = require('child_process');
 
 const app = express();
 const port = process.env.PORT || 5000;
-const production = process.env.PRODUCTION || "FALSE";
 
 const frontendPath = "../frontend";
+
 
 const buildReactApp = () => new Promise( (resolve, reject) => {
   exec(`npm --prefix ${frontendPath} run build`, (error, stdout, stderr) => {
@@ -23,7 +22,7 @@ const startServer = async () => {
   await buildReactApp();
 
   app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
+      console.log(`Production server is running on http://localhost:${port}`);
   });
 };
 
@@ -39,9 +38,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(buildPath, 'index.html'));
 });
 
-if (production === "TRUE") {
-  // Production Here
-}
 
 startServer();
 
