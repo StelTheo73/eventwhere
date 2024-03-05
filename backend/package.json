@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified' && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start-frontend": "cd ../frontend && npm start",
     "start-backend": "nodemon server.js",
     "start-local": "concurrently -n \"REACT,EXPRESS\" -c \"yellow,blue\" -p \"[{name}]\" \"npm run start-frontend\" \"npm run start-backend\"",
