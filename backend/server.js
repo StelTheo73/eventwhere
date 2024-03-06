@@ -38,6 +38,10 @@ if (PRODUCTION === "TRUE") {
   startServer();
 }
 else if (PRODUCTION === "FALSE") {
+  app.get('/api', (req, res) => {
+    res.send('Hello from Express!');
+  });
+
   app.listen(PORT, () => {
     log(`Production server is running on http://localhost:${PORT}`);
     log(`React development server is running on http://localhost:3000`);
