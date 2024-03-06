@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified' && exit 1",
     // TODO: Stel, make it run for win and push in this branch
     "start-frontend": "cd ../frontend && npm start",
-    "start-local": "node server-dev.js",
-    "start-production": "node server-prod.js"
+    "start-backend": "nodemon server.js",
+    "start-local": "concurrently -n \"REACT,EXPRESS\" -c \"yellow,blue\" -p \"[{name}]\" \"npm run start-frontend\" \"npm run start-backend\"",
+    "start-production": "node server.js"
   },
   "keywords": [],
   "author": "",
