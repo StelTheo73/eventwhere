@@ -35,9 +35,25 @@ const startServer = async () => {
 app.use(express.static(BUILD_PATH));
 
 if (PRODUCTION === "TRUE") {
+  app.get('/api', (req, res) => {
+    res.send('Hello from Express!');
+  });
+  
   startServer();
 }
 else if (PRODUCTION === "FALSE") {
+
+  app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // or specify your frontend's origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+  
+  app.get('/api', (req, res) => {
+    res.send('Hello from Express!');
+  });
+
   app.listen(PORT, () => {
     log(`Production server is running on http://localhost:${PORT}`);
     log(`React development server is running on http://localhost:3000`);
